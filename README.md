@@ -42,10 +42,3 @@ yarn hardhat coverage
 ```
 yarn hardhat run deploy/deploy.js --network seiTestnet
 ```
-
-## Custom Tasks
-
-1. Mint - Mints USDC Tokens to specific address
-```
-yarn hardhat mint --address <ADDRESS> --amount <AMOUNT> --network <NETWORK_NAME>
-```
