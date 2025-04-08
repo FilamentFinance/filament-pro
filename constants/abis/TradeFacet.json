@@ -1,0 +1,1760 @@
+[
+    {
+        "inputs": [],
+        "name": "EnforcedPause",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ExpectedPause",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "IncreasePosition_IncorrectBorrowAndFundingFee",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidInitialization",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotInitializing",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ReentrancyGuardReentrantCall",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "SafeERC20FailedOperation",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__AvgPriceIsZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__DeltaLessThanCollateral",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__ExceedsMaxAllowedLeverage",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__FeeLargerThanCollateral",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__FundingFeeMismatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__IncorrectBorrowFee",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__IncorrectFeeCondition",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__IndexDeltaMoreThanMaxUsdc",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__IndexDeltaMoreThanSize",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__InvalidAsset",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__LengthMismatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__LossMoreThanPositionCollateral",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__LowCollateral",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__MaxIntValueExceeded",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__NonZeroPositionSizeNeeded",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__OnlyKeeper",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__OnlyProtocolLiquidator",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__OnlyRouterSequencer",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__PositionNotExist",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__PositionNotLiquidable",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__PositionShouldHaveLiquidated",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TradeFacet__TradeFeeLargerThanCollateralDelta",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "size",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "viaOB",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "reserveAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateral",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "tradeFee",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "borrowFee",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "fundingFee",
+                "type": "int256"
+            }
+        ],
+        "name": "ADLTriggered",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "size",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateral",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "averagePrice",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "reserveAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "viaOrderBook",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "realisedPnl",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ClosePosition",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "asset",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "CompartmentBalanceIncreased",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "asset",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "CompartmentBalanceReduced",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "indexDelta",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "currentRealisedPnL",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+            }
+        ],
+        "name": "CurrentRealisedPnL",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum TraderType",
+                "name": "traderType",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeCOMBPoolBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterCOMBPoolBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeCompartmentBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterCompartmentBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeTotalBorrowed",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterTotalBorrowed",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "DecreaseCOMBPoolBalance",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateralDelta",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "sizeDelta",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "fee",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isPositionIncreased",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "borrowFee",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "fundingFee",
+                "type": "int256"
+            }
+        ],
+        "name": "DecreasePosition",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum TraderType",
+                "name": "traderType",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeCOMBPoolBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterCOMBPoolBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeCompartmentBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterCompartmentBalance",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "beforeTotalBorrowed",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "afterTotalBorrowed",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "IncreaseCOMBPoolBalance",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateralDelta",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "sizeDelta",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "price",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "fee",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isPositionIncreased",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+            }
+        ],
+        "name": "IncreasePosition",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "version",
+                "type": "uint64"
+            }
+        ],
+        "name": "Initialized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "feesUSD",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "LPFeesAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "size",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateral",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidatePosition",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "message",
+                "type": "string"
+            }
+        ],
+        "name": "Log",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "intValue",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "longValue",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "shortValue",
+                "type": "int256"
+            }
+        ],
+        "name": "LogInt",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "uintValue1",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "uintValue2",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "uintValue3",
+                "type": "uint256"
+            }
+        ],
+        "name": "LogUint",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            }
+        ],
+        "name": "NewPositionCreated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "Paused",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "profit",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "hasprofit",
+                "type": "bool"
+            }
+        ],
+        "name": "Profit",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newTotalBorrowed",
+                "type": "uint256"
+            }
+        ],
+        "name": "TotalBorrowedUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum TraderType",
+                "name": "traderType",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "totalFees",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "tradeFees",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "borrowFees",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "fundingFee",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "TotalTradingFees",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "receiver",
+                "type": "address"
+            }
+        ],
+        "name": "TransferOutProfit",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "newKey",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "fromAccount",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "toAccount",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newPositionSize",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newPositionCollateral",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "averagePrice",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "reserveAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "viaOrder",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "TransferPosition",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "Unpaused",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "size",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "collateral",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "averagePrice",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "reserveAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "viaOrderBook",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "int256",
+                "name": "realisedPnl",
+                "type": "int256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "markPrice",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "creationTimestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "UpdatePosition",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "feesUSD",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "addLPFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "borrowFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "borrowFeeDistribution",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "collateralDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "indexDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "price",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "orderId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradeFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "borrowFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "fundingFee",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "account",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum ITradeFacet.MatchType",
+                        "name": "matchType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "enum TraderType",
+                        "name": "traderType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct ITradeFacet.PositionParams",
+                "name": "decreasePosition_",
+                "type": "tuple"
+            }
+        ],
+        "name": "decreasePosition",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32[]",
+                "name": "keys",
+                "type": "bytes32[]"
+            },
+            {
+                "internalType": "int256[]",
+                "name": "fundFeeValues",
+                "type": "int256[]"
+            }
+        ],
+        "name": "fundingFeeDistribution",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_price",
+                "type": "uint256"
+            },
+            {
+                "internalType": "int256",
+                "name": "_fundingFee",
+                "type": "int256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_borrowFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_liquidationFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "getCurrentCollateral",
+        "outputs": [
+            {
+                "internalType": "int256",
+                "name": "availabeCollateral",
+                "type": "int256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_size",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_averagePrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_price",
+                "type": "uint256"
+            }
+        ],
+        "name": "getDelta",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "hasProfit",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "delta",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            }
+        ],
+        "name": "getLiquidationPositionSizeAndPrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "liquidationPositionSize",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "liquidationPrice",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_size",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_averagePrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_nextPrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_indexDelta",
+                "type": "uint256"
+            }
+        ],
+        "name": "getNextAveragePrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "nextAvgPrice",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "int256",
+                "name": "fees",
+                "type": "int256"
+            }
+        ],
+        "name": "getTransferPositionSizeAndPrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "liquidationPositionSize",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "liquidationPrice",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "borrowFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes32[]",
+                "name": "keys",
+                "type": "bytes32[]"
+            },
+            {
+                "internalType": "int256[]",
+                "name": "fundFeeValues",
+                "type": "int256[]"
+            }
+        ],
+        "name": "hourlyFeeDistribution",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "collateralDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "indexDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "price",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "orderId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradeFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "borrowFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "fundingFee",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "account",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum ITradeFacet.MatchType",
+                        "name": "matchType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "enum TraderType",
+                        "name": "traderType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct ITradeFacet.PositionParams",
+                "name": "_increasePositionParams",
+                "type": "tuple"
+            }
+        ],
+        "name": "increasePosition",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_account",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_price",
+                "type": "uint256"
+            },
+            {
+                "internalType": "int256",
+                "name": "_fundingFee",
+                "type": "int256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_matchId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_borrowFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_tradeFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "liquidateMatchWithPoolADL",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            }
+        ],
+        "name": "maxAvailableUSDC",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "maxAvailUsdc",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "paused",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_account",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_price",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_orderId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_borrowFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_tradeFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_liquidationFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "int256",
+                "name": "_fundingFee",
+                "type": "int256"
+            }
+        ],
+        "name": "transferPosition",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_price",
+                "type": "uint256"
+            },
+            {
+                "internalType": "int256",
+                "name": "_fundingFee",
+                "type": "int256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_borrowFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_liquidationFee",
+                "type": "uint256"
+            }
+        ],
+        "name": "validateliquidation",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "isLiquidable",
+                "type": "bool"
+            },
+            {
+                "internalType": "int256",
+                "name": "currentCollateral",
+                "type": "int256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]

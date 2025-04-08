@@ -1,0 +1,1402 @@
+[
+    {
+        "inputs": [],
+        "name": "EnforcedPause",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ExpectedPause",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidInitialization",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotInitializing",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ReentrancyGuardReentrantCall",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "SafeERC20FailedOperation",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__ArrayLengthsMismatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__AssetAlreadyExists",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__CombPoolLimitExceeded",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InsufficientAmount",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidADLPercentage",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidAddress",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidEpoch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidEscrow",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidOptimalUtilization",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__InvalidRouter",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__OnlyRouterEscrow",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__PercentageMismatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__RequestExceedsBalance",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__RequestExceedsClaim",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__RequestExceedsMaxWithdrawable",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__UnlistedAsset",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VaultFacet__ZeroAmount",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "AddedToCompartment",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newLimit",
+                "type": "uint256"
+            }
+        ],
+        "name": "CombPoolLimitUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "deposit",
+                "type": "address"
+            }
+        ],
+        "name": "DepositAddressAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "time",
+                "type": "uint256"
+            }
+        ],
+        "name": "EpochDurationUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "escrow",
+                "type": "address"
+            }
+        ],
+        "name": "EscrowAddressAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "IndexTokenAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "version",
+                "type": "uint64"
+            }
+        ],
+        "name": "Initialized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "Bs",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "S1",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "S2",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "Uo",
+                "type": "uint256"
+            }
+        ],
+        "name": "InterestRateParametersUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "deposit",
+                "type": "address"
+            }
+        ],
+        "name": "KeeperAddressAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "asset",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newValue",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidationLeverageUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidityAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidityReduced",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidityRemoved",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "lpToken",
+                "type": "address"
+            }
+        ],
+        "name": "LpTokenAddressAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "maxLeverage",
+                "type": "uint256"
+            }
+        ],
+        "name": "MaxLeverageUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address[]",
+                "name": "assetAddress",
+                "type": "address[]"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256[]",
+                "name": "percentage",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "NewAssetAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "Paused",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "posKey",
+                "type": "bytes32"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "isLong",
+                "type": "bool"
+            }
+        ],
+        "name": "PositionKey",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "protocolLiquidator",
+                "type": "address"
+            }
+        ],
+        "name": "ProtocolLiquidatorAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address[]",
+                "name": "sequencer",
+                "type": "address[]"
+            }
+        ],
+        "name": "SequencerAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "SequencerRemoved",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "staker",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "Staked",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "TransferIn",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "receiver",
+                "type": "address"
+            }
+        ],
+        "name": "TransferOut",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "usdc",
+                "type": "address"
+            }
+        ],
+        "name": "USDCAddressAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "Unpaused",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "staker",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "Unstaked",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "timeInSeconds",
+                "type": "uint256"
+            }
+        ],
+        "name": "addCompartmentalizationTime",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_depositAddress",
+                "type": "address"
+            }
+        ],
+        "name": "addDepositContract",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_escrow",
+                "type": "address"
+            }
+        ],
+        "name": "addEscrow",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "addExtraCollateral",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            }
+        ],
+        "name": "addIndexToken",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "Bs",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "S1",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "S2",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "Uo",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct InterestRateParameters[]",
+                "name": "_interestRateParameters",
+                "type": "tuple[]"
+            }
+        ],
+        "name": "addInterestRateParams",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_keeperAddress",
+                "type": "address"
+            }
+        ],
+        "name": "addKeeperContract",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "addLiquidity",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_lpTokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "addLpTokenContract",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "_address",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "_percentage",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "addNewAsset",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_percentage",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "addOptimalUtilization",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_protocolLiquidator",
+                "type": "address"
+            }
+        ],
+        "name": "addProtocolLiquidator",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "router",
+                "type": "address"
+            }
+        ],
+        "name": "addRouter",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "_addresses",
+                "type": "address[]"
+            }
+        ],
+        "name": "addSequencer",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "claim",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "compartmentalize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_account",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_size",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_collateral",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_averagePrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_reserveAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_viaOrder",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_lastIncreasedTime",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_creationTime",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_tradingFee",
+                "type": "uint256"
+            },
+            {
+                "internalType": "int256",
+                "name": "_realisedPnl",
+                "type": "int256"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            }
+        ],
+        "name": "createPosition",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "key",
+                "type": "bytes32"
+            }
+        ],
+        "name": "deleteDustPosition",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_account",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_previousAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_deductions",
+                "type": "uint256"
+            }
+        ],
+        "name": "deletePositionMitigateRisk",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "getBorrowRate",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "borrowRate",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "utilization",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "maxWithdrawableAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_removedAsset",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_addedAsset",
+                "type": "address"
+            }
+        ],
+        "name": "moveCollateralFromRemovedAsset",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "pause",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "paused",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_shares",
+                "type": "uint256"
+            }
+        ],
+        "name": "redeemLPTokens",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_flpAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "removeLiquidity",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            }
+        ],
+        "name": "removeSequencer",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_asset",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_percentage",
+                "type": "uint256"
+            }
+        ],
+        "name": "setADLPercentage",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_newMaxLeverage",
+                "type": "uint256"
+            }
+        ],
+        "name": "setMaxLeverage",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_usdcAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setUSDCContract",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "stakeLP",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "unpause",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "unstakeLP",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "_position",
+                "type": "tuple"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "_key",
+                "type": "bytes32"
+            }
+        ],
+        "name": "updateCollateralFromLiquidation",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_shortCollateral",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_longCollateral",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateCollateralMappings",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_newLimit",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateCombPoolLimit",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_dustSize",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateDustSize",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "timeInHours",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateEpochDuration",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "Bs",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "S1",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "S2",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "Uo",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct InterestRateParameters",
+                "name": "_interestRateParameters",
+                "type": "tuple"
+            }
+        ],
+        "name": "updateInterestRateParams",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateLiquidationLeverage",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateMaxLiquidatorLeverageToAcquirePosition",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "_escrowKey",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "_newKey",
+                "type": "bytes32"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "_newPosition",
+                "type": "tuple"
+            }
+        ],
+        "name": "updatePositionForLiquidator",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

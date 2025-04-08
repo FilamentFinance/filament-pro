@@ -1,0 +1,209 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "lp",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "protocolTreasury",
+                "type": "uint256"
+            }
+        ],
+        "name": "BorrowingFeeDistributionUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "newInsurance",
+                "type": "address"
+            }
+        ],
+        "name": "InsuranceUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "newLiquidationFees",
+                "type": "uint256"
+            }
+        ],
+        "name": "LiquidationFeesUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "newProtocolTreasury",
+                "type": "address"
+            }
+        ],
+        "name": "ProtocolTreasuryUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newReferralContract",
+                "type": "address"
+            }
+        ],
+        "name": "ReferralContractUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "referralPortion",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "lp",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "protocolTreasury",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "filamentTokenStakers",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "insurancePortion",
+                "type": "uint256"
+            }
+        ],
+        "name": "TradingFeeDistributionUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "newVaultContract",
+                "type": "address"
+            }
+        ],
+        "name": "VaultContractUpdated",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "feesInUSD",
+                "type": "uint256"
+            }
+        ],
+        "name": "distributeBorrowingFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "feesInUSD",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_account",
+                "type": "address"
+            }
+        ],
+        "name": "distributeTradeFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getProtocolTreasury",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_trader",
+                "type": "address"
+            }
+        ],
+        "name": "getTotalFeesCollectedFromTrader",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "feesInUSD",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateLiquidationFeesCollected",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

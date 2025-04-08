@@ -1,0 +1,245 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            }
+        ],
+        "name": "addIndexToken",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "addLiquidity",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "_address",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "_percentage",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "addNewAsset",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "compartmentalize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "getBorrowRate",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "",
+                "type": "tuple"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "_key",
+                "type": "bytes32"
+            }
+        ],
+        "name": "updateCollateralFromLiquidation",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "time",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateEpochDuration",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "_escrowKey",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "_newKey",
+                "type": "bytes32"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "_newPosition",
+                "type": "tuple"
+            }
+        ],
+        "name": "updatePositionForLiquidator",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

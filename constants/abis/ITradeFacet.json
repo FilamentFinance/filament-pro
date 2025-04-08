@@ -1,0 +1,278 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "feesUSD",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "_indexToken",
+                "type": "address"
+            }
+        ],
+        "name": "addLPFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "collateralDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "indexDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "price",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "orderId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradeFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "borrowFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "fundingFee",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "account",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum ITradeFacet.MatchType",
+                        "name": "matchType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "enum TraderType",
+                        "name": "traderType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct ITradeFacet.PositionParams",
+                "name": "decreasePosition",
+                "type": "tuple"
+            }
+        ],
+        "name": "decreasePosition",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_size",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_averagePrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isLong",
+                "type": "bool"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_nextPrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_indexDelta",
+                "type": "uint256"
+            }
+        ],
+        "name": "getNextAveragePrice",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "nextAvgPrice",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "collateralDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "indexDelta",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "price",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "orderId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradeFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "borrowFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "fundingFee",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "account",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "enum ITradeFacet.MatchType",
+                        "name": "matchType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "enum TraderType",
+                        "name": "traderType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct ITradeFacet.PositionParams",
+                "name": "_increasePosition",
+                "type": "tuple"
+            }
+        ],
+        "name": "increasePosition",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "size",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "collateral",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "averagePrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reserveAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "viaOrder",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "lastIncreasedTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "creationTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tradingFee",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "int256",
+                        "name": "realisedPnl",
+                        "type": "int256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "indexToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "isLong",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Position",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
